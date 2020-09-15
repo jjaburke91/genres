@@ -5,6 +5,22 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
-}
+    siteMetadata: {
+        title: `Genres`,
+        siteUrl: `http://www.genres.com`,
+        description: ``
+    },
+
+    plugins: [
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `genres`,
+                path: `${__dirname}/data/`,
+                plugins: [
+                    `gatsby-transformer-json`
+                ]
+            }
+        }
+    ]
+};
